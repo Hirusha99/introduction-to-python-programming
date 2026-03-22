@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 3: Python Data Types | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 3 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 03</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 3 – Python Data Types</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#what-is-datatype">What is a Data Type?</a></li>
+          <li><a href="#text">1. Text Type (str)</a></li>
+          <li><a href="#numeric">2. Numeric Types</a></li>
+          <li><a href="#sequence">3. Sequence Types</a></li>
+          <li><a href="#mapping">4. Mapping Type</a></li>
+          <li><a href="#set">5. Set Types</a></li>
+          <li><a href="#boolean">6. Boolean Type</a></li>
+          <li><a href="#none">8. None Type</a></li>
+          <li><a href="#lab">Lab 02</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Other Lessons</div>
+        <ul class="sidebar-nav"><li><a href="topic2.html">02 – Python Intro</a></li><li><a href="topic4.html">04 – Operators</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.2);color:#059669;">Lesson 03</div>
+        <h1>Lesson 3: Python Data Types</h1>
+        <p>In programming, a data type describes the kind of value a variable can hold. Python automatically detects the data type based on the value you assign — this is called <strong>dynamic typing</strong>.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">55 min</span><span class="topic-meta-item">Lab 02</span><span class="topic-meta-item">Week 03</span></div>
+      </div>
+
+      <section class="content-section" id="what-is-datatype">
+        <h2>What is a Data Type?</h2>
+        <p>In programming, a data type describes the kind of value a variable can hold. For example, it could be a number, a piece of text, or a list of items.</p>
+        <p>Python automatically detects the data type based on the value you assign to a variable. This is called <strong>dynamic typing</strong>.</p>
+        <h3>Getting the Data Type</h3>
+        <p>You can get the data type of any object by using the <code>type()</code> function:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 5
+print(type(x))    # &lt;class 'int'&gt;
+
+y = "Hello"
+print(type(y))    # &lt;class 'str'&gt;
+
+z = 3.14
+print(type(z))    # &lt;class 'float'&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="text">
+        <h2>1. Text Type</h2>
+        <h3>str (String)</h3>
+        <ul>
+          <li>Represents text.</li>
+          <li>Created by putting characters inside single quotes (<code>' '</code>) or double quotes (<code>" "</code>).</li>
+          <li>Strings are <strong>immutable</strong>, meaning they cannot be changed after they are created.</li>
+        </ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>name = "Alice"
+message = 'Hello, Python!'</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="numeric">
+        <h2>2. Numeric Types</h2>
+        <h3>int (Integer)</h3>
+        <ul><li>Whole numbers, positive or negative, no decimal point.</li><li>Unlimited length (only limited by memory).</li></ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 5
+b = -10
+c = 1000000
+
+# Operations
+a + b
+a * 10
+a ** 2   # exponent (5 squared = 25)</code></pre>
+        </div>
+
+        <h3>float</h3>
+        <p>Numbers with a decimal point. Used for measurements and calculations with fractions.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>pi = 3.14159
+temp = -2.5</code></pre>
+        </div>
+
+        <h3>complex</h3>
+        <p>Numbers with a real and an imaginary part (represented by <code>j</code>). Used in scientific and engineering calculations.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>z = 3 + 5j</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="sequence">
+        <h2>3. Sequence Types</h2>
+        <p>Used to store multiple values in a specific order.</p>
+        <h3>list</h3>
+        <ul><li>Ordered, <strong>changeable</strong>, and allows duplicates.</li><li>Written with square brackets <code>[ ]</code>.</li></ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>fruits = ["apple", "banana", "cherry"]</code></pre>
+        </div>
+
+        <h3>tuple</h3>
+        <ul><li>Ordered, <strong>unchangeable</strong>, and allows duplicates.</li><li>Written with round brackets <code>( )</code>.</li></ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>coordinates = (10, 20)</code></pre>
+        </div>
+
+        <h3>range</h3>
+        <p>Represents a sequence of numbers, often used in loops.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>nums = range(5)  # 0, 1, 2, 3, 4</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="mapping">
+        <h2>4. Mapping Type</h2>
+        <h3>dict (Dictionary)</h3>
+        <ul>
+          <li>Stores data in <strong>key-value pairs</strong>.</li>
+          <li>Unordered (since Python 3.7, ordered), changeable, and no duplicate keys.</li>
+          <li>Written with curly brackets <code>{ }</code>.</li>
+        </ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>person = {"name": "John", "age": 25}</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="set">
+        <h2>5. Set Types</h2>
+        <p>Used to store <strong>unique items</strong>.</p>
+        <h3>set</h3>
+        <ul><li>Unordered and unindexed. No duplicate items.</li><li>Written with curly brackets <code>{ }</code>.</li></ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>unique_nums = {1, 2, 3, 3}  # Result: {1, 2, 3}</code></pre>
+        </div>
+        <h3>frozenset</h3>
+        <p>Like a set, but <strong>unchangeable (immutable)</strong>.</p>
+      </section>
+
+      <section class="content-section" id="boolean">
+        <h2>6. Boolean Type</h2>
+        <h3>bool</h3>
+        <ul><li>Represents one of two values: <code>True</code> or <code>False</code>.</li><li>Used in logic and decisions (if statements).</li></ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>is_loading = True
+is_finished = False</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="none">
+        <h2>8. None Type</h2>
+        <h3>NoneType</h3>
+        <ul><li>Represents the <strong>absence of a value</strong>.</li><li>Used to define a null variable or return value.</li></ul>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = None</code></pre>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">i</span><p><strong>Setting the Specific Data Type:</strong> You can convert between types using functions like <code>int()</code>, <code>str()</code>, <code>float()</code>, <code>list()</code>, etc. This is called <strong>casting</strong>.</p></div>
+      </section>
+
+      <section class="content-section" id="lab">
+        <h2>Lab 02</h2>
+        <div class="callout callout-success"><span class="callout-icon">✓</span><p>Create a new file called <strong>lab02.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">02</div><div><div class="lab-title">Lab 02 – Python Data Types</div><div class="lab-subtitle">str · int · float · bool · list · dict</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">Ex 1</span><span class="task-text"><strong>Exercise 01:</strong> Identify the data types of the following variables:<br/>
+              1. <code>a = 10</code><br/>2. <code>b = 10.5</code><br/>3. <code>c = "Hello"</code><br/>4. <code>d = True</code><br/>5. <code>e = [1, 2, 3]</code>
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 2</span><span class="task-text"><strong>Exercise 02:</strong> Write a Python program to:<br/>
+              1. Store the length and width of a rectangle in variables.<br/>
+              2. Calculate and print the area of the rectangle.
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 3</span><span class="task-text"><strong>Exercise 03:</strong> Write a Python program to:<br/>
+              1. Store the price of an item in a variable.<br/>
+              2. Store the quantity in another variable.<br/>
+              3. Calculate and print the total cost.
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 4</span><span class="task-text"><strong>Exercise 04:</strong> Write a Python program to:<br/>
+              1. Store marks of three subjects in three variables.<br/>
+              2. Calculate the total and average.<br/>
+              3. Print the total and average.
+            </span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="topic-nav">
+        <a href="topic2.html" class="topic-nav-btn"><span>←</span><div><span class="topic-nav-label">Previous</span><span class="topic-nav-title">Python Introduction</span></div></a>
+        <a href="topic4.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Python Operators</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 8: Python Loops | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 8 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 08</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 8 – Python Loops</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#while">The while Loop</a></li>
+          <li><a href="#break">break Statement</a></li>
+          <li><a href="#continue">continue Statement</a></li>
+          <li><a href="#else-while">else Statement</a></li>
+          <li><a href="#for-loop">The for Loop</a></li>
+          <li><a href="#range">range() Function</a></li>
+          <li><a href="#nested">Nested Loops</a></li>
+          <li><a href="#lab">Lab 08</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Other Lessons</div>
+        <ul class="sidebar-nav"><li><a href="topic7.html">07 – Functions</a></li><li><a href="topic9.html">09 – Arrays</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.2);color:#059669;">Lesson 08</div>
+        <h1>Lesson 8: Python Loops</h1>
+        <p>Python has two primitive loop commands: <code>while</code> loops and <code>for</code> loops.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">65 min</span><span class="topic-meta-item">Lab 08</span><span class="topic-meta-item">Week 08</span></div>
+      </div>
+
+      <section class="content-section" id="while">
+        <h2>The while Loop</h2>
+        <p>With the while loop we can execute a set of statements as long as a condition is true.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>i = 1
+while i < 6:
+    print(i)
+    i += 1</code></pre>
+        </div>
+        <div class="callout callout-warn"><span class="callout-icon">!</span><p>Remember to increment the variable inside the loop! Otherwise the loop will continue forever — an <strong>infinite loop</strong>.</p></div>
+      </section>
+
+      <section class="content-section" id="break">
+        <h2>The break Statement</h2>
+        <p>With the break statement we can stop the loop even if the while condition is true:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>i = 1
+while i < 6:
+    print(i)
+    if i == 3:
+        break
+    i += 1</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="continue">
+        <h2>The continue Statement</h2>
+        <p>With the continue statement we can stop the current iteration, and continue with the next:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>i = 0
+while i < 6:
+    i += 1
+    if i == 3:
+        continue    # skip printing 3
+    print(i)</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="else-while">
+        <h2>The else Statement</h2>
+        <p>With the else statement we can run a block of code once when the condition no longer is true:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>i = 1
+while i < 6:
+    print(i)
+    i += 1
+else:
+    print("i is no longer less than 6")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="for-loop">
+        <h2>The for Loop</h2>
+        <p>A for loop is used for iterating over a sequence (a list, tuple, dictionary, set, or string). This works more like an iterator method.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print(x)</code></pre>
+        </div>
+        <h3>Looping Through a String</h3>
+        <p>Even strings are iterable objects — they contain a sequence of characters:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>for x in "banana":
+    print(x)</code></pre>
+        </div>
+        <h3>Else in For Loop</h3>
+        <p>The <code>else</code> keyword in a for loop specifies a block of code to be executed when the loop is finished:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>for x in range(6):
+    print(x)
+else:
+    print("Finally finished!")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="range">
+        <h2>The range() Function</h2>
+        <p>To loop through a set of code a specified number of times, we can use the <code>range()</code> function. It returns a sequence of numbers, starting from 0 by default, incrementing by 1, and stopping before a specified number.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># range(6) gives 0 to 5
+for x in range(6):
+    print(x)
+
+# range(start, stop) — values from 2 to 5
+for x in range(2, 6):
+    print(x)
+
+# range(start, stop, step) — increment by 3
+for x in range(2, 30, 3):
+    print(x)</code></pre>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">!</span><p><strong>Note:</strong> <code>range(6)</code> is not the values of 0 to 6, but the values <strong>0 to 5</strong>. The stop value is always exclusive.</p></div>
+      </section>
+
+      <section class="content-section" id="nested">
+        <h2>Nested Loops</h2>
+        <p>A nested loop is a loop inside a loop. The "inner loop" will be executed one time for each iteration of the "outer loop":</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:
+    for y in fruits:
+        print(x, y)</code></pre>
+        </div>
+        <h3>The pass Statement</h3>
+        <p>for loops cannot be empty, but if you for some reason have an empty for loop, put in the <code>pass</code> statement to avoid getting an error:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>for x in [0, 1, 2]:
+    pass</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="lab">
+        <h2>Lab 08</h2>
+        <div class="callout callout-success"><span class="callout-icon">✓</span><p>Create a new file called <strong>lab08.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">08</div><div><div class="lab-title">Lab 08 – Python Loops</div><div class="lab-subtitle">while · for · break · continue · range()</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">1</span><span class="task-text">Write a Python program using a while loop to print numbers from 1 to 20.</span></li>
+            <li class="lab-task"><span class="task-num">2</span><span class="task-text">Write a Python program using a while loop to print even numbers from 2 to 40.</span></li>
+            <li class="lab-task"><span class="task-num">3</span><span class="task-text">Write a Python program using a while loop to print odd numbers from 1 to 39.</span></li>
+            <li class="lab-task"><span class="task-num">4</span><span class="task-text">Write a Python program using a while loop to calculate the sum of numbers from 1 to 100.</span></li>
+            <li class="lab-task"><span class="task-num">5</span><span class="task-text">Write a Python program using a while loop to calculate the factorial of a given number n.</span></li>
+            <li class="lab-task"><span class="task-num">6</span><span class="task-text">Write a Python program using a while loop to reverse the digits of a given integer (e.g., 1234 → 4321).</span></li>
+            <li class="lab-task"><span class="task-num">7</span><span class="task-text">Write a Python program using a while loop to count how many digits are in a given positive integer.</span></li>
+            <li class="lab-task"><span class="task-num">8</span><span class="task-text">Write a Python program using a while loop to keep asking the user for numbers until they enter 0, then print the total sum of all entered numbers (excluding 0).</span></li>
+            <li class="lab-task"><span class="task-num">9</span><span class="task-text">Write a program to count the number of digits in a given integer using a while loop.</span></li>
+            <li class="lab-task"><span class="task-num">10</span><span class="task-text">Write a program that asks the user for a number and prints a countdown to 0.</span></li>
+            <li class="lab-task"><span class="task-num">11</span><span class="task-text"><strong>Bank ATM Scenario:</strong> A bank ATM allows users to withdraw money until their account balance becomes zero or they choose to stop.<br/>
+              • The user enters the withdrawal amount.<br/>
+              • If the amount is greater than the balance, show "Insufficient balance".<br/>
+              • Otherwise, deduct the amount and show the updated balance.<br/>
+              • Ask the user if they want to withdraw again. If No or Balance reaches 0, stop the loop.</span></li>
+            <li class="lab-task"><span class="task-num">12</span><span class="task-text"><strong>Grocery Store Cashier Scenario:</strong> A grocery store cashier keeps entering item prices one by one. When the cashier enters 0, the billing ends. The program should calculate the total bill amount. Write a program using a while loop.</span></li>
+            <li class="lab-task"><span class="task-num">14</span><span class="task-text">Write a Python program to print numbers from 1 to 10 using a for loop.</span></li>
+            <li class="lab-task"><span class="task-num">15</span><span class="task-text">Write a program to print numbers from 10 to 1 using a for loop.</span></li>
+            <li class="lab-task"><span class="task-num">16</span><span class="task-text">Write a program to calculate the sum of numbers from 1 to 50 using a for loop.</span></li>
+            <li class="lab-task"><span class="task-num">17</span><span class="task-text">Write a program that displays the multiplication table of a number entered by the user using a for loop.</span></li>
+            <li class="lab-task"><span class="task-num">18</span><span class="task-text">Ask the user to enter marks for 5 students. Calculate total and average marks.</span></li>
+            <li class="lab-task"><span class="task-num">19</span><span class="task-text">Ask the cashier to enter prices of items. When 0 is entered, stop and print the total bill.</span></li>
+            <li class="lab-task"><span class="task-num">20</span><span class="task-text">Ask the user for a number n and print a single-line repeated pattern:<br/>
+              Example for n=5: <code>*****</code></span></li>
+            <li class="lab-task"><span class="task-num">21</span><span class="task-text">Write a program using nested loops to print the below pattern:<br/>
+              <code>1 2 3</code><br/>
+              <code>1 2 3</code><br/>
+              <code>1 2 3</code></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="topic-nav">
+        <a href="topic7.html" class="topic-nav-btn"><span>←</span><div><span class="topic-nav-label">Previous</span><span class="topic-nav-title">Functions</span></div></a>
+        <a href="topic9.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Python Arrays</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>

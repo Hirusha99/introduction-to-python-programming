@@ -5,6 +5,7 @@
   <title>Python Programming Lecture Notes</title>
   <meta name="description" content="Python Programming lecture notes, lab sheets and code examples." />
   <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
 </head>
 <body>
   <nav class="navbar">
@@ -138,6 +139,21 @@
         card.style.display = text.includes(q) ? '' : 'none';
       });
     }
+
+    // Lesson Locking Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      if (LECTURE_CONFIG.enableAll) return;
+      
+      const cards = document.querySelectorAll('.topic-card');
+      cards.forEach(card => {
+        const lessonNum = parseInt(card.querySelector('.card-number').textContent);
+        if (lessonNum > LECTURE_CONFIG.maxUnlockedLesson) {
+          card.classList.add('locked');
+          card.href = '#';
+          card.insertAdjacentHTML('afterbegin', '<div class="lock-overlay"><span>🔒 Access Locked</span></div>');
+        }
+      });
+    });
   </script>
 </body>
 </html>

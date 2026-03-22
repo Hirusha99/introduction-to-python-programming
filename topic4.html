@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 4: Python Operators | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 4 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 04</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 4 – Python Operators</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#arithmetic">1. Arithmetic Operators</a></li>
+          <li><a href="#assignment">2. Assignment Operators</a></li>
+          <li><a href="#comparison">3. Comparison Operators</a></li>
+          <li><a href="#logical">4. Logical Operators</a></li>
+          <li><a href="#identity">5. Identity Operators</a></li>
+          <li><a href="#membership">6. Membership Operators</a></li>
+          <li><a href="#bitwise">7. Bitwise Operators</a></li>
+          <li><a href="#lab">Lab 03</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Other Lessons</div>
+        <ul class="sidebar-nav"><li><a href="topic3.html">03 – Data Types</a></li><li><a href="topic5.html">05 – If Statement</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(234,88,12,0.08);border:1px solid rgba(234,88,12,0.2);color:#ea580c;">Lesson 04</div>
+        <h1>Lesson 4: Python Operators</h1>
+        <p>Operators are used to perform operations on variables and values. Python divides operators into 7 groups.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">55 min</span><span class="topic-meta-item">Lab 03</span><span class="topic-meta-item">Week 04</span></div>
+      </div>
+
+      <section class="content-section" id="arithmetic">
+        <h2>1. Arithmetic Operators</h2>
+        <p>Arithmetic operators are used with numeric values to perform common mathematical operations:</p>
+        <table>
+          <thead><tr><th>Operator</th><th>Name</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td><code>+</code></td><td>Addition</td><td><code>x + y</code></td></tr>
+            <tr><td><code>-</code></td><td>Subtraction</td><td><code>x - y</code></td></tr>
+            <tr><td><code>*</code></td><td>Multiplication</td><td><code>x * y</code></td></tr>
+            <tr><td><code>/</code></td><td>Division</td><td><code>x / y</code></td></tr>
+            <tr><td><code>%</code></td><td>Modulus (remainder)</td><td><code>x % y</code></td></tr>
+            <tr><td><code>**</code></td><td>Exponentiation (power)</td><td><code>x ** y</code></td></tr>
+            <tr><td><code>//</code></td><td>Floor division (integer)</td><td><code>x // y</code></td></tr>
+          </tbody>
+        </table>
+        <h3>Division in Python</h3>
+        <p>Python has two division operators:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 12
+y = 5
+
+# / Division — always returns a float
+print(x / y)   # Result: 2.4
+
+# // Floor division — always returns an integer (rounds DOWN)
+print(x // y)  # Result: 2</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="assignment">
+        <h2>2. Assignment Operators</h2>
+        <p>Assignment operators are used to assign values to variables:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 5       # Assign
+x += 3      # Same as x = x + 3
+x -= 3      # Same as x = x - 3
+x *= 3      # Same as x = x * 3
+x /= 3      # Same as x = x / 3
+x %= 3      # Same as x = x % 3
+x //= 3     # Same as x = x // 3
+x **= 3     # Same as x = x ** 3</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="comparison">
+        <h2>3. Comparison Operators</h2>
+        <p>Comparison operators are used to compare two values. They return <code>True</code> or <code>False</code>:</p>
+        <table>
+          <thead><tr><th>Operator</th><th>Name</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td><code>==</code></td><td>Equal</td><td><code>x == y</code></td></tr>
+            <tr><td><code>!=</code></td><td>Not equal</td><td><code>x != y</code></td></tr>
+            <tr><td><code>&gt;</code></td><td>Greater than</td><td><code>x &gt; y</code></td></tr>
+            <tr><td><code>&lt;</code></td><td>Less than</td><td><code>x &lt; y</code></td></tr>
+            <tr><td><code>&gt;=</code></td><td>Greater than or equal to</td><td><code>x &gt;= y</code></td></tr>
+            <tr><td><code>&lt;=</code></td><td>Less than or equal to</td><td><code>x &lt;= y</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content-section" id="logical">
+        <h2>4. Logical Operators</h2>
+        <p>Logical operators are used to combine conditional statements:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 5
+# and — Returns True if both statements are true
+print(x < 10 and x > 2)    # True
+
+# or — Returns True if one of the statements is true
+print(x < 3 or x > 2)      # True
+
+# not — Reverse the result
+print(not(x < 5 and x > 0))  # False</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="identity">
+        <h2>5. Identity Operators</h2>
+        <p>Identity operators are used to compare the objects — not if they are equal, but if they are actually the <strong>same object</strong> in memory:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = ["apple", "banana"]
+y = ["apple", "banana"]
+z = x
+
+print(x is z)      # True  — same object
+print(x is y)      # False — same values, different objects
+print(x is not y)  # True</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="membership">
+        <h2>6. Membership Operators</h2>
+        <p>Membership operators are used to test if a sequence is present in an object:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>fruits = ["apple", "banana", "cherry"]
+
+print("apple" in fruits)      # True
+print("mango" not in fruits)  # True</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="bitwise">
+        <h2>7. Bitwise Operators</h2>
+        <p>Bitwise operators are used to compare binary numbers:</p>
+        <table>
+          <thead><tr><th>Operator</th><th>Name</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>&amp;</code></td><td>AND</td><td>Sets each bit to 1 if both bits are 1</td></tr>
+            <tr><td><code>|</code></td><td>OR</td><td>Sets each bit to 1 if one of two bits is 1</td></tr>
+            <tr><td><code>^</code></td><td>XOR</td><td>Sets each bit to 1 if only one of two bits is 1</td></tr>
+            <tr><td><code>~</code></td><td>NOT</td><td>Inverts all the bits</td></tr>
+            <tr><td><code>&lt;&lt;</code></td><td>Left shift</td><td>Shift left by pushing zeros in from the right</td></tr>
+            <tr><td><code>&gt;&gt;</code></td><td>Right shift</td><td>Shift right by pushing copies of the leftmost bit</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content-section" id="lab">
+        <h2>Lab 03</h2>
+        <div class="callout callout-success"><span class="callout-icon">✓</span><p>Create a new file called <strong>lab03.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">03</div><div><div class="lab-title">Lab 03 – Python Operators</div><div class="lab-subtitle">Arithmetic · Assignment · Comparison · Logical</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">Ex 1</span><span class="task-text"><strong>Exercise 1:</strong><br/>1. Assign the value 10 to a variable called <code>x</code>.<br/>2. Increase the value of x by 5 using an assignment operator.<br/>3. Print the final value of x.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 2</span><span class="task-text"><strong>Exercise 2:</strong><br/>1. Assign the value 20 to a variable called <code>num</code>.<br/>2. Decrease the value of num by 4 using an assignment operator.<br/>3. Print the final value of num.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 3</span><span class="task-text"><strong>Exercise 3:</strong><br/>1. Assign the value 6 to a variable called <code>a</code>.<br/>2. Multiply the value of a by 3 using an assignment operator.<br/>3. Print the result.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 4</span><span class="task-text"><strong>Exercise 4:</strong><br/>1. Assign the value 100 to a variable called <code>y</code>.<br/>2. Divide the value of y by 2 using an assignment operator.<br/>3. Print the result.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 5</span><span class="task-text"><strong>Exercise 5:</strong><br/>1. Assign the value 50 to a variable called <code>score</code>.<br/>2. Find the remainder when score is divided by 6 using an assignment operator.<br/>3. Print the result.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 6</span><span class="task-text"><strong>Exercise 6:</strong><br/>1. Assign the value 2 to a variable called <code>x</code>.<br/>2. Raise x to the power of 3 using an assignment operator.<br/>3. Print the final value.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 7</span><span class="task-text"><strong>Exercise 7:</strong><br/>1. Assign the value 5000 to a variable called <code>salary</code>.<br/>2. Add 10% bonus using an assignment operator (<code>salary += salary * 0.1</code>).<br/>3. Print the updated salary.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 8</span><span class="task-text"><strong>Exercise 8 Part A:</strong><br/>1. Write a program that asks the user for two integers <code>a</code> and <code>b</code>.<br/>2. Print:<br/>
+              &nbsp;&nbsp;• a + b<br/>
+              &nbsp;&nbsp;• a - b<br/>
+              &nbsp;&nbsp;• a * b<br/>
+              &nbsp;&nbsp;• a / b<br/>
+              &nbsp;&nbsp;• a // b<br/>
+              &nbsp;&nbsp;• a % b<br/>
+              &nbsp;&nbsp;• a ** b
+            </span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="topic-nav">
+        <a href="topic3.html" class="topic-nav-btn"><span>←</span><div><span class="topic-nav-label">Previous</span><span class="topic-nav-title">Python Data Types</span></div></a>
+        <a href="topic5.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Python If Statement</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>

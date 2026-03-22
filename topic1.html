@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 1: Introduction to Computer Programming | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 1 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><span class="nav-badge">Lesson 01</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 1 – Introduction to Computer Programming</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#what-is-programming">1.1 What is Programming?</a></li>
+          <li><a href="#languages">1.2 Programming Languages</a></li>
+          <li><a href="#hierarchy">1.3 Language Hierarchy</a></li>
+          <li><a href="#errors">1.4 Types of Errors</a></li>
+          <li><a href="#testing">1.5 Software Testing</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Next Lesson</div>
+        <ul class="sidebar-nav"><li><a href="topic2.html">02 – Python Introduction</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.2);color:var(--accent);">Lesson 01</div>
+        <h1>Lesson 1: Introduction to Computer Programming</h1>
+        <p>Understand the fundamental concepts of programming — what it is, how programming languages work, and the types of errors you will encounter.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">60 min</span><span class="topic-meta-item">Week 01</span><span class="topic-meta-item">Theory</span></div>
+      </div>
+
+      <section class="content-section" id="what-is-programming">
+        <h2>1.1 What is Programming?</h2>
+        <p>Programming is the process of creating a set of instructions that tells a computer what to do. You can think of it like writing a recipe for a computer to follow.</p>
+        <p>The instructions you write are called <strong>code</strong>, and the person who writes them is a <strong>programmer</strong>.</p>
+
+        <h3>Algorithm</h3>
+        <p>An <strong>algorithm</strong> is a step-by-step process for solving a problem or finishing a task. It's like a plan or a blueprint.</p>
+        <div class="callout callout-info">
+          <span class="callout-icon">💡</span>
+          <p><strong>Example: Algorithm for adding two numbers</strong><br/>
+          1. Input Number 1<br/>
+          2. Input Number 2<br/>
+          3. Calculate: Answer = Number1 + Number2<br/>
+          4. Print Answer</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="languages">
+        <h2>1.2 Programming Languages</h2>
+        <p>Programming languages help us give instructions to a computer in a clear and exact way, so the computer knows exactly what to do without confusion.</p>
+
+        <h3>Key Components of a Programming Language</h3>
+
+        <h3>1. SYNTAX (Form)</h3>
+        <p>Syntax means the <strong>rules and structure</strong> of a programming language. It tells you how to write the code correctly.</p>
+        <ul>
+          <li>Like grammar in English. If grammar is wrong, the sentence doesn't make sense.</li>
+          <li>Same way, if syntax is wrong, the program won't run.</li>
+        </ul>
+
+        <h3>2. SEMANTICS (Meaning)</h3>
+        <p>Semantics means the <strong>meaning and behavior</strong> of the code. It tells you what the code actually does when it runs.</p>
+        <ul>
+          <li>Even if syntax is correct, the program can still give a wrong result if the meaning is wrong.</li>
+        </ul>
+
+        <div class="callout callout-info">
+          <span class="callout-icon">i</span>
+          <p><strong>Example:</strong> If you write code to add two numbers:<br/>
+          • <strong>Syntax</strong> = Did you write it in the correct format?<br/>
+          • <strong>Semantics</strong> = Does it really add the numbers and give the right answer?</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="hierarchy">
+        <h2>1.3 Computer Language Hierarchy</h2>
+
+        <h3>1. Low-Level Languages</h3>
+        <p>Low-level languages are closer to the hardware and harder for humans to read.</p>
+        <ul>
+          <li><strong>a) Machine Language (Binary)</strong> — The only language computers directly understand. Written in 0s and 1s.</li>
+          <li><strong>b) Assembly Language</strong> — Uses short symbolic codes (mnemonics) instead of binary. Requires an <em>assembler</em> to convert to machine code.</li>
+        </ul>
+
+        <h3>2. High-Level Languages</h3>
+        <p>High-level languages are close to human language and much easier to write and read.</p>
+        <p><strong>Characteristics:</strong></p>
+        <ul>
+          <li>Closer to English</li>
+          <li>Easier to write, read, and maintain</li>
+          <li>Needs a compiler or interpreter to run</li>
+        </ul>
+        <ul>
+          <li><strong>a) Structured / Procedural Languages</strong> — e.g., C, Pascal. Code runs in a sequence of steps.</li>
+          <li><strong>b) Object-Oriented Languages</strong> — e.g., Python, Java, C++. Code is organized around objects and classes.</li>
+        </ul>
+
+        <h3>Compiler vs Interpreter</h3>
+        <div class="content-section">
+          <table>
+            <thead><tr><th>Compiler</th><th>Interpreter</th></tr></thead>
+            <tbody>
+              <tr><td>Translates the entire program at once</td><td>Translates and executes one line at a time</td></tr>
+              <tr><td>Produces an executable file</td><td>No separate executable file is produced</td></tr>
+              <tr><td>Faster execution after compilation</td><td>Slower — translates each time</td></tr>
+              <tr><td>Examples: C, C++</td><td>Examples: Python, JavaScript</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section" id="errors">
+        <h2>1.4 Types of Errors</h2>
+
+        <h3>Syntax Errors</h3>
+        <p>Errors in the structure/grammar of the code. Detected by the compiler or interpreter before the program runs.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Syntax Error Example
+if x = 5:     # Wrong: should be ==
+    print(x)</code></pre>
+        </div>
+
+        <h3>Logical Errors</h3>
+        <p>The program runs but produces the wrong result because the logic is incorrect. Cannot be detected by the compiler — must be found by humans.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Logical Error Example
+# ERROR: Wrong formula for average
+average = (a + b + c) / 2  # Should be divided by 3!
+
+# CORRECT:
+average = (a + b + c) / 3</code></pre>
+        </div>
+        <div class="callout callout-warn">
+          <span class="callout-icon">!</span>
+          <p>Logical errors are hidden — the program runs without crashing but gives wrong output. Always test your programs with known inputs.</p>
+        </div>
+
+        <h3>Runtime Errors</h3>
+        <p>Errors that occur while the program is running. The program crashes or behaves unexpectedly.</p>
+        <p>Common causes: memory overflow, division by zero, invalid input.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Runtime error: Division by zero
+result = 10 / 0  # ZeroDivisionError</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="testing">
+        <h2>1.5 Software Testing</h2>
+        <p>Software testing is the process of evaluating a program to find and fix errors before release.</p>
+        <ul>
+          <li><strong>Unit Testing</strong> — Testing individual parts of a program</li>
+          <li><strong>Integration Testing</strong> — Testing how parts work together</li>
+          <li><strong>System Testing</strong> — Testing the complete system</li>
+        </ul>
+        <div class="callout callout-success">
+          <span class="callout-icon">✓</span>
+          <p>Good programmers always test their code with different inputs — including edge cases — to catch all types of errors.</p>
+        </div>
+        <p>Additional resources for this lesson:</p>
+        <ul>
+          <li>🔗 <a href="https://square-khaan-e80.notion.site/Python-IDEs-2f329a894bf880a29e10d7cc82b88b94?pvs=25" target="_blank">Python IDEs</a></li>
+          <li>🔗 <a href="https://square-khaan-e80.notion.site/How-to-Install-Python-2f329a894bf8802c8716f311fcac0fff?pvs=25" target="_blank">How to Install Python</a></li>
+        </ul>
+      </section>
+
+      <div class="topic-nav">
+        <div></div>
+        <a href="topic2.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Python Introduction</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>

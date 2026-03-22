@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 5: Python If Statement | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 5 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 05</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 5 – Python If Statement</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#if-statement">if Statement</a></li>
+          <li><a href="#elif">elif</a></li>
+          <li><a href="#else">else</a></li>
+          <li><a href="#and-or-not">and / or / not</a></li>
+          <li><a href="#nested">Nested if</a></li>
+          <li><a href="#shorthand">Short Hand If</a></li>
+          <li><a href="#lab04">Lab 04</a></li>
+          <li><a href="#lab05">Lab 05</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Other Lessons</div>
+        <ul class="sidebar-nav"><li><a href="topic4.html">04 – Operators</a></li><li><a href="topic6.html">06 – Match Statement</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);color:#7c3aed;">Lesson 05</div>
+        <h1>Lesson 5: Python If Statement</h1>
+        <p>Make decisions in your programs using if, elif, and else statements with logical conditions.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">65 min</span><span class="topic-meta-item">Lab 04 &amp; 05</span><span class="topic-meta-item">Week 05</span></div>
+      </div>
+
+      <section class="content-section" id="if-statement">
+        <h2>Python Conditions and If statements</h2>
+        <p>Python supports the usual logical conditions from mathematics:</p>
+        <ul>
+          <li>Equals: <code>a == b</code></li>
+          <li>Not Equals: <code>a != b</code></li>
+          <li>Less than: <code>a &lt; b</code></li>
+          <li>Less than or equal to: <code>a &lt;= b</code></li>
+          <li>Greater than: <code>a &gt; b</code></li>
+          <li>Greater than or equal to: <code>a &gt;= b</code></li>
+        </ul>
+        <p>These conditions can be used in several ways, most commonly in "if statements" and loops. An "if statement" is written by using the <code>if</code> keyword.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 33
+b = 200
+if b > a:
+    print("b is greater than a")</code></pre>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">💡</span><p>Python relies on <strong>indentation</strong> (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.</p></div>
+
+        <h3>Indentation Error Example</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 33
+b = 200
+if b > a:
+print("b is greater than a")  # ERROR: no indentation</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="elif">
+        <h2>Elif</h2>
+        <p>The <code>elif</code> keyword is Python's way of saying "if the previous conditions were not true, then try this condition".</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 33
+b = 33
+if b > a:
+    print("b is greater than a")
+elif a == b:
+    print("a and b are equal")</code></pre>
+        </div>
+        <h3>Multiple Elif Statements</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>score = 85
+if score >= 90:
+    print("Grade A")
+elif score >= 80:
+    print("Grade B")
+elif score >= 70:
+    print("Grade C")
+elif score >= 60:
+    print("Grade D")
+else:
+    print("Grade F")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="else">
+        <h2>Else</h2>
+        <p>The <code>else</code> keyword catches anything which isn't caught by the preceding conditions.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 200
+b = 33
+if b > a:
+    print("b is greater than a")
+elif a == b:
+    print("a and b are equal")
+else:
+    print("a is greater than b")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="and-or-not">
+        <h2>And / Or / Not</h2>
+        <h3>And</h3>
+        <p>The <code>and</code> keyword is a logical operator, and is used to combine conditional statements:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 200
+b = 33
+c = 500
+if a > b and c > a:
+    print("Both conditions are True")</code></pre>
+        </div>
+        <h3>Or</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 200
+b = 33
+c = 500
+if a > b or a > c:
+    print("At least one of the conditions is True")</code></pre>
+        </div>
+        <h3>Not</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 33
+b = 200
+if not a > b:
+    print("a is NOT greater than b")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="nested">
+        <h2>Nested If</h2>
+        <p>You can have if statements inside if statements, this is called <strong>nested if</strong> statements.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 41
+if x > 10:
+    print("Above ten,")
+    if x > 20:
+        print("and also above 20!")
+    else:
+        print("but not above 20.")</code></pre>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">💡</span><p>The <code>pass</code> statement: if statements cannot be empty, but if you for some reason have an if statement with no content, put in the <code>pass</code> statement to avoid getting an error.</p></div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>a = 33
+b = 200
+if b > a:
+    pass   # prevents error for empty if block</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="shorthand">
+        <h2>Short Hand If</h2>
+        <p>If you have only one statement to execute, you can put it on the same line as the if statement.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Short hand if
+if a > b: print("a is greater than b")
+
+# Short hand if ... else (ternary)
+a = 2
+b = 330
+print("A") if a > b else print("B")
+
+# Multiple else statements on one line
+a = 330
+b = 330
+print("A") if a > b else print("=") if a == b else print("B")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="lab04">
+        <h2>Lab 04</h2>
+        <div class="callout callout-success"><span class="callout-icon">✅</span><p>Create a new file called <strong>lab04.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">04</div><div><div class="lab-title">Lab 04 – Python If Statement</div><div class="lab-subtitle">if · elif · else · Conditions</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">Ex 1</span><span class="task-text"><strong>Exercise 1:</strong> Write a program using an if statement to categorize a person's age. Take the age as an input.<br/>
+              • If the age is between 0 and 12, print "Child"<br/>
+              • If the age is between 13 and 19, print "Teenager"<br/>
+              • If the age is between 20 and 59, print "Adult"<br/>
+              • If the age is 60 or above, print "Senior"</span></li>
+            <li class="lab-task"><span class="task-num">Ex 2</span><span class="task-text"><strong>Exercise 2:</strong> Write a program that takes an integer between 1 and 7 as input and prints the corresponding day of the week (1 for Monday, 2 for Tuesday, etc.) using the match statement. If the input is not in the range, print "Invalid day".</span></li>
+            <li class="lab-task"><span class="task-num">Ex 3</span><span class="task-text"><strong>Exercise 3:</strong> Write a program to check if a number is positive, negative, or zero using if-elif-else statements.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 4</span><span class="task-text"><strong>Exercise 4:</strong> Write a Python program to display a message based on the temperature value:<br/>
+              • Greater than 30 → "It's hot outside!"<br/>
+              • Greater than 20 → "It's warm outside"<br/>
+              • Greater than 10 → "It's cool outside"<br/>
+              • Otherwise → "It's cold outside!"</span></li>
+            <li class="lab-task"><span class="task-num">Ex 5</span><span class="task-text"><strong>Exercise 5:</strong> Write a program to check whether a given year is a leap year or not.</span></li>
+            <li class="lab-task"><span class="task-num">Ex 6</span><span class="task-text"><strong>Exercise 6:</strong> Write a program to accept the cost price of a bike and display the road tax to be paid:<br/>
+              • Greater than Rs. 100,000 → tax is 15%<br/>
+              • Greater than Rs. 50,000 and ≤ Rs. 100,000 → tax is 10%<br/>
+              • Less than or equal to Rs. 50,000 → tax is 5%</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section" id="lab05">
+        <h2>Lab 05</h2>
+        <div class="callout callout-success"><span class="callout-icon">✅</span><p>Create a new file called <strong>lab05.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">05</div><div><div class="lab-title">Lab 05 – Nested If Statements</div><div class="lab-subtitle">Nested if · Complex Conditions</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">1</span><span class="task-text">Write a program to find the maximum between three numbers.</span></li>
+            <li class="lab-task"><span class="task-num">2</span><span class="task-text">Write a program to input electricity unit charge and calculate the total electricity bill according to the given condition:<br/>
+              • For first 50 units: Rs. 0.50/unit<br/>
+              • For next 100 units: Rs. 0.75/unit<br/>
+              • For next 100 units: Rs. 1.20/unit<br/>
+              • For units above 250: Rs. 1.50/unit<br/>
+              An additional surcharge of 20% is added to the bill.</span></li>
+            <li class="lab-task"><span class="task-num">3</span><span class="task-text">Write a Python program using nested if statements to check the following conditions:<br/>
+              • If score ≥ 60, attendance ≥ 80, and assignment submitted → "Pass with good standing"<br/>
+              • If score ≥ 60 and attendance ≥ 80, but assignment not submitted → "Pass but missing assignment"<br/>
+              • If score ≥ 60 but attendance &lt; 80 → "Pass but low attendance"<br/>
+              • If score &lt; 60 → "Fail"</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="topic-nav">
+        <a href="topic4.html" class="topic-nav-btn"><span>←</span><div><span class="topic-nav-label">Previous</span><span class="topic-nav-title">Python Operators</span></div></a>
+        <a href="topic6.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Python Match Statement</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>

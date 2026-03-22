@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 6: Python Match Statement | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 6 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 06</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 6 – Python Match Statement</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#syntax">Syntax</a></li>
+          <li><a href="#default">Default Value</a></li>
+          <li><a href="#combine">Combine Values</a></li>
+          <li><a href="#vs-if">Match vs If-Else</a></li>
+          <li><a href="#lab">Lab 06</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Other Lessons</div>
+        <ul class="sidebar-nav"><li><a href="topic5.html">05 – If Statement</a></li><li><a href="topic7.html">07 – Functions</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(234,179,8,0.08);border:1px solid rgba(234,179,8,0.25);color:#a16207;">Lesson 06 &middot; Python 3.10+</div>
+        <h1>Lesson 6: Python Match Statement</h1>
+        <p>Introduced in Python 3.10, the match statement provides a more readable and efficient way to handle multiple conditions — similar to <code>switch</code> in C++ or Java.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">45 min</span><span class="topic-meta-item">Lab 06</span><span class="topic-meta-item">Week 06</span></div>
+      </div>
+
+      <section class="content-section" id="syntax">
+        <h2>Syntax</h2>
+        <p>The match statement compares a variable against several possible values (patterns) and executes the block of code for the first matching pattern.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>match variable:
+    case pattern1:
+        # code for pattern1
+    case pattern2:
+        # code for pattern2
+    case _:
+        # code if no patterns match (default case)</code></pre>
+        </div>
+        <div class="callout callout-info"><span class="callout-icon">i</span><p>The <code>_</code> (underscore) is a wildcard pattern that acts as a <strong>default case</strong> — it catches everything that doesn't match any other pattern.</p></div>
+        <h3>Example</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>status_code = 404
+match status_code:
+    case 200:
+        print("Success")
+    case 404:
+        print("Not Found")
+    case 500:
+        print("Server Error")
+    case _:
+        print("Unknown Status")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="default">
+        <h2>Default Value</h2>
+        <p>The <code>case _:</code> block acts as a default when no other case matches.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>day = "Wednesday"
+match day:
+    case "Monday":
+        print("Start of work week")
+    case "Friday":
+        print("End of work week")
+    case "Saturday" | "Sunday":
+        print("Weekend!")
+    case _:
+        print("Midweek day")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="combine">
+        <h2>Combine Values</h2>
+        <p>You can combine multiple values in one case using the <code>|</code> (or) operator:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>color = "red"
+match color:
+    case "red" | "orange":
+        print("Warm color")
+    case "blue" | "green":
+        print("Cool color")
+    case _:
+        print("Other color")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="vs-if">
+        <h2>Why Use Match?</h2>
+        <ul>
+          <li><strong>Readability:</strong> It is cleaner than using many elif statements.</li>
+          <li><strong>Powerful Pattern Matching:</strong> It can match complex data structures (like lists or dictionaries).</li>
+          <li><strong>Better Structure:</strong> It clearly defines alternatives for a specific variable.</li>
+        </ul>
+        <h3>Comparing If-Else vs. Match</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python — If-Else approach</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>if status_code == 200:
+    print("Success")
+elif status_code == 404:
+    print("Not Found")
+else:
+    print("Unknown Status")</code></pre>
+        </div>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python — Match approach</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>match status_code:
+    case 200:
+        print("Success")
+    case 404:
+        print("Not Found")
+    case _:
+        print("Unknown Status")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="lab">
+        <h2>Lab 06</h2>
+        <div class="callout callout-success"><span class="callout-icon">✓</span><p>Create a new file called <strong>lab06.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">06</div><div><div class="lab-title">Lab 06 – Python Match Statement</div><div class="lab-subtitle">match-case · Pattern Matching</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">1</span><span class="task-text">Create a Python program that:<br/>
+              a. Takes two numbers as input.<br/>
+              b. Takes an operator (+, -, *, /) as input.<br/>
+              c. Uses a match statement to perform the corresponding arithmetic operation.<br/>
+              d. Prints the result of the operation.</span></li>
+            <li class="lab-task"><span class="task-num">2</span><span class="task-text">Write a program that takes a number (1–12) as input and prints the corresponding month name using a match-case statement.</span></li>
+            <li class="lab-task"><span class="task-num">3</span><span class="task-text">Write a program that displays a menu of 4 options (1–4). Take a user choice as input and use a match-case statement to print which option was selected. Print "Invalid choice" for any other input.</span></li>
+            <li class="lab-task"><span class="task-num">4</span><span class="task-text">Write a program that takes the color of a traffic light (red, yellow, green) as input and prints the corresponding action using match-case:<br/>
+              • red → "Stop"<br/>
+              • yellow → "Get Ready"<br/>
+              • green → "Go"</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="topic-nav">
+        <a href="topic5.html" class="topic-nav-btn"><span>←</span><div><span class="topic-nav-label">Previous</span><span class="topic-nav-title">Python If Statement</span></div></a>
+        <a href="topic7.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Functions</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>

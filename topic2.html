@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 2: Python Introduction | Python Programming</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script>
+    if (!LECTURE_CONFIG.enableAll && 2 > LECTURE_CONFIG.maxUnlockedLesson) {
+      window.location.href = 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 02</span></div>
+  </nav>
+  <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 2 – Python Introduction</span></div>
+  <div class="topic-layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">On This Page</div>
+        <ul class="sidebar-nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#what-is-python">What is Python?</a></li>
+          <li><a href="#syntax">Python Syntax</a></li>
+          <li><a href="#indentation">Indentation</a></li>
+          <li><a href="#comments">Comments</a></li>
+          <li><a href="#variables">Variables</a></li>
+          <li><a href="#lab">Lab Sheet 1</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Other Lessons</div>
+        <ul class="sidebar-nav"><li><a href="topic1.html">01 – Introduction</a></li><li><a href="topic3.html">03 – Data Types</a></li></ul>
+      </div>
+    </aside>
+    <main class="topic-main">
+      <div class="topic-hero" id="overview">
+        <div class="topic-hero-tag" style="background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.2);color:var(--accent);">Lesson 02</div>
+        <h1>Lesson 2: Python Introduction</h1>
+        <p>Learn what Python is, how to write and run Python code, and the basics of Python syntax, indentation, comments, and variables.</p>
+        <div class="topic-meta-row"><span class="topic-meta-item">60 min</span><span class="topic-meta-item">Lab Sheet 1</span><span class="topic-meta-item">Week 02</span></div>
+      </div>
+
+      <section class="content-section" id="what-is-python">
+        <h2>What is Python?</h2>
+        <p>Python is a popular programming language. It was created by <strong>Guido van Rossum</strong>, and released in 1991.</p>
+        <p>It is used for:</p>
+        <ul>
+          <li>Web development (server-side)</li>
+          <li>Software development</li>
+          <li>Mathematics</li>
+          <li>System scripting</li>
+        </ul>
+        <h3>What can Python do?</h3>
+        <ul>
+          <li>Python can be used on a server to create web applications.</li>
+          <li>Python can be used alongside software to create workflows.</li>
+          <li>Python can connect to database systems. It can also read and modify files.</li>
+          <li>Python can be used to handle big data and perform complex mathematics.</li>
+          <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+        </ul>
+        <h3>Why Python?</h3>
+        <ul>
+          <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+          <li>Python has a simple syntax similar to the English language.</li>
+          <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
+          <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
+          <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="syntax">
+        <h2>Python Syntax compared to other languages</h2>
+        <ul>
+          <li>Python was designed for readability, and has some similarities to the English language with influence from mathematics.</li>
+          <li>Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.</li>
+          <li>Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.</li>
+        </ul>
+        <h3>Execute Python Syntax</h3>
+        <p>You can run a Python file from the command line:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Command Line</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>C:\Users\Your Name>python myfile.py</code></pre>
+        </div>
+        <h3>Python Output / Print</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Print text
+print("Hello, World!")
+
+# Double quotes and single quotes both work
+print('Hello, World!')
+
+# Print numbers
+print(42)
+print(3.14)
+
+# Mix text and numbers
+name = "Alice"
+age = 20
+print("My name is", name, "and I am", age, "years old.")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="indentation">
+        <h2>Python Indentation</h2>
+        <p>Indentation refers to the spaces at the beginning of a line of code. In many programming languages, indentation is used only to improve code readability. However, in Python, <strong>indentation is mandatory</strong> and plays a crucial role in defining the structure of the program.</p>
+        <p>Python uses indentation to indicate a block of code, instead of braces <code>{}</code> used in languages like C, C++, or Java.</p>
+        <h3>Why Indentation Is Important in Python</h3>
+        <ul>
+          <li>It defines the beginning and end of a code block.</li>
+          <li>It determines which statements belong together.</li>
+          <li>Incorrect indentation leads to syntax or indentation errors.</li>
+        </ul>
+        <h3>Example of Correct Indentation</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>if x > 5:
+    print("x is greater than 5")
+    print("This line is inside the if block")</code></pre>
+        </div>
+        <h3>Example of Incorrect Indentation</h3>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>if x > 5:
+print("This will cause an IndentationError")</code></pre>
+        </div>
+        <div class="callout callout-warn"><span class="callout-icon">!</span><p>Where is indentation required? Inside <code>if</code>, <code>for</code>, <code>while</code>, <code>def</code>, and <code>class</code> blocks.</p></div>
+        <h3>Python Statements</h3>
+        <p>Most Python programs contain many statements. Statements are executed one by one, in the same order as they are written. Semicolons are optional and rarely used.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Many statements
+x = 10
+y = 20
+z = x + y
+print(z)
+
+# Semicolons (optional, rarely used)
+x = 5; y = 10; print(x + y)</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="comments">
+        <h2>Python Comments</h2>
+        <p>Comments can be used to:</p>
+        <ul>
+          <li>Explain Python code</li>
+          <li>Make the code more readable</li>
+          <li>Prevent execution when testing code</li>
+        </ul>
+        <h3>Creating a Comment</h3>
+        <p>Comments start with a <code>#</code>, and Python will ignore them:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># This is a comment
+print("Hello, World!")
+
+# Comment at end of line
+print("Hello, World!")  # This is a comment
+
+# Prevent execution
+# print("Hello, World!")
+print("Cheers, Mate!")</code></pre>
+        </div>
+        <h3>Multiline Comments</h3>
+        <p>Python does not really have a syntax for multi line comments. To add a multiline comment you could insert a <code>#</code> for each line, or use a multiline string (triple quotes):</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># This is a comment
+# written in
+# more than just one line
+
+"""
+This is a comment
+written in
+more than just one line
+"""
+print("Hello, World!")</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="variables">
+        <h2>Python Variables</h2>
+        <p>Variables are <strong>containers for storing data values</strong>. In Python, a variable is created the moment you first assign a value to it.</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 5
+y = "Hello, World!"
+print(x)
+print(y)</code></pre>
+        </div>
+
+        <h3>Creating Variables</h3>
+        <p>Python has no command for declaring a variable. A variable is created the moment you first assign a value to it:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x = 4          # x is of type int
+x = "Sally"    # x is now of type str
+print(x)       # Sally</code></pre>
+        </div>
+
+        <h3>Variable Naming Rules</h3>
+        <ul>
+          <li>Must start with a letter or an underscore character</li>
+          <li>Cannot start with a number</li>
+          <li>Can only contain alpha-numeric characters and underscores (A-z, 0-9, _)</li>
+          <li>Variable names are <strong>case-sensitive</strong> (<code>age</code>, <code>Age</code> and <code>AGE</code> are three different variables)</li>
+          <li>Cannot be Python keywords (<code>if</code>, <code>for</code>, <code>while</code>, etc.)</li>
+        </ul>
+
+        <h3>Multi Words Variable Names</h3>
+        <p>Variable names with more than one word can be difficult to read. There are several techniques to make them more readable:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code># Camel Case — each word starts with a capital letter (except the first)
+myVariableName = "John"
+
+# Pascal Case — each word starts with a capital letter
+MyVariableName = "John"
+
+# Snake Case — each word is separated by an underscore
+my_variable_name = "John"</code></pre>
+        </div>
+
+        <h3>Assign Multiple Values</h3>
+        <p>Python allows you to assign values to multiple variables in one line:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">Python</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+          <pre><code>x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)</code></pre>
+        </div>
+      </section>
+
+      <section class="content-section" id="lab">
+        <h2>Lab Sheet 1</h2>
+        <div class="callout callout-success"><span class="callout-icon">i</span><p>Create a new file called <strong>lab01.py</strong> and complete all exercises.</p></div>
+        <div class="lab-sheet">
+          <div class="lab-sheet-header"><div class="lab-num">01</div><div><div class="lab-title">Lab Sheet 1 – Python Introduction</div><div class="lab-subtitle">Variables · Output · Comments</div></div></div>
+          <ul class="lab-tasks">
+            <li class="lab-task"><span class="task-num">Ex 1</span><span class="task-text">
+              <strong>Exercise 1:</strong><br/>
+              1. Create a variable called <code>name</code> and assign your name to it.<br/>
+              2. Create a variable called <code>age</code> and assign your age to it.<br/>
+              3. Print: <em>My name is &lt;name&gt; and I am &lt;age&gt; years old.</em>
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 2</span><span class="task-text">
+              <strong>Exercise 2:</strong><br/>
+              1. Create two variables <code>a = 5</code> and <code>b = 10</code>.<br/>
+              2. Swap their values using a third (temporary) variable.<br/>
+              3. Print the values of <code>a</code> and <code>b</code> after swapping.
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 3</span><span class="task-text">
+              <strong>Exercise 3:</strong><br/>
+              1. Create two variables <code>num1</code> and <code>num2</code> with any numbers.<br/>
+              2. Create a third variable <code>sum</code> that stores the sum of num1 and num2.<br/>
+              3. Print: <em>The sum of &lt;num1&gt; and &lt;num2&gt; is &lt;sum&gt;.</em>
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 4</span><span class="task-text">
+              <strong>Exercise 4:</strong><br/>
+              1. Write a program to print your name.<br/>
+              2. Add a comment above the code explaining what the program does.
+            </span></li>
+            <li class="lab-task"><span class="task-num">Ex 5</span><span class="task-text">
+              <strong>Exercise 5:</strong><br/>
+              1. Write a program to print your age and grade.<br/>
+              2. Add a multi-line comment at the top explaining the purpose of the program.
+            </span></li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="topic-nav">
+        <a href="topic1.html" class="topic-nav-btn"><span>←</span><div><span class="topic-nav-label">Previous</span><span class="topic-nav-title">Introduction to Computer Programming</span></div></a>
+        <a href="topic3.html" class="topic-nav-btn next"><span>→</span><div><span class="topic-nav-label">Next Lesson</span><span class="topic-nav-title">Python Data Types</span></div></a>
+      </div>
+    </main>
+  </div>
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function copyCode(btn) { const pre = btn.closest('.code-block').querySelector('pre'); navigator.clipboard.writeText(pre.innerText).then(() => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+    const sections = document.querySelectorAll('.content-section, .topic-hero'); const navLinks = document.querySelectorAll('.sidebar-nav a');
+    window.addEventListener('scroll', () => { let c = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) c = s.id; }); navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + c); }); });
+  </script>
+</body>
+</html>
