@@ -5,6 +5,7 @@
   <title>Lesson 8: Python Loops | Python Programming</title>
   <link rel="stylesheet" href="style.css" />
   <script src="config.js"></script>
+  <script src="auth.js"></script>
   <script>
     if (!LECTURE_CONFIG.enableAll && 8 > LECTURE_CONFIG.maxUnlockedLesson) {
       window.location.href = 'index.html';
@@ -14,7 +15,7 @@
 <body>
   <nav class="navbar">
     <div class="nav-logo"><div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div><span>Python Programming</span></div>
-    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 08</span></div>
+    <div class="nav-links"><a href="index.html">Home</a><a href="index.html#topics">Lessons</a><a href="#lab">Lab Sheet</a><span class="nav-badge">Lesson 08</span><button class="btn-logout" onclick="Auth.logout()" style="margin-left:1rem;">Logout</button></div>
   </nav>
   <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#topics">Lessons</a> &nbsp;/&nbsp; <span>Lesson 8 – Python Loops</span></div>
   <div class="topic-layout">

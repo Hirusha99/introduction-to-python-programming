@@ -247,6 +247,8 @@ a:hover { color: #1d4ed8; }
 }
 .topic-card.locked .lock-overlay { display: flex; }
 
+.btn-logout { background: none; border: 1px solid #e2e8f0; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer; color: var(--text-muted); transition: all 0.2s; }
+.btn-logout:hover { background: #fee2e2; color: #dc2626; border-color: #fca5a5; }
 
 /* ============================================
    BREADCRUMB

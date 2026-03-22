@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Python Programming Lecture Notes</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <style>
+    body {
+        display: flex; align-items: center; justify-content: center; min-height: 100vh;
+        background: #f1f5f9; margin: 0; padding: 1.5rem;
+    }
+    .login-container {
+        width: 100%; max-width: 400px;
+        background: white; padding: 2.5rem; border-radius: 12px;
+        box-shadow: 0 10px 40px -10px rgba(37,99,235,0.15), 0 0 1px 1px rgba(37,99,235,0.05);
+        text-align: center;
+    }
+    .login-logo { margin-bottom: 1.5rem; display: inline-block; }
+    .login-logo img { width: 48px; height: 48px; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text); }
+    p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .form-group { text-align: left; margin-bottom: 1.5rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+    input {
+        width: 100%; padding: 0.75rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px;
+        font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s;
+        box-sizing: border-box;
+    }
+    input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    .btn-login {
+        width: 100%; padding: 0.75rem; background: var(--accent); color: white;
+        border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+        transition: background 0.2s; margin-top: 1rem;
+    }
+    .btn-login:hover { background: #1d4ed8; }
+    .error-msg {
+        color: #dc2626; font-size: 0.85rem; margin-top: 1rem; display: none;
+        background: #fef2f2; padding: 0.5rem; border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-logo"><img src="python-logo.svg" alt="Python"></div>
+    <h1>Lecture Notes Login</h1>
+    <p>Please enter your access password to continue.</p>
+    
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required autofocus />
+      </div>
+      <button type="submit" class="btn-login">Unlock Access</button>
+      <div id="errorMsg" class="error-msg">Incorrect password. Please try again.</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      const success = Auth.login(pwd);
+      if (!success) {
+        document.getElementById('errorMsg').style.display = 'block';
+      }
+    });
+
+    // If already logged in, index.html will be loaded by auth.js check
+  </script>
+</body>
+</html>

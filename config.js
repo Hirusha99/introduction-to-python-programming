@@ -5,3 +5,9 @@ const LECTURE_CONFIG = {
     maxUnlockedLesson: 1, // Change this number to unlock more lessons
     enableAll: false      // Set to true to unlock everything at once
 };
+
+// Authentication Configuration
+const LECTURE_AUTH = {
+    studentPassword: 'student2026', // Password for students
+    adminPassword: 'admin789'     // Password for admin (unlocks all lessons)
+};
