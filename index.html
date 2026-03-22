@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Programming Lecture Notes</title>
+  <meta name="description" content="Python Programming lecture notes, lab sheets and code examples." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <div class="logo-icon"><img src="python-logo.svg" class="py-logo" alt="Python"></div>
+      <span>Python Programming</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#topics">Lessons</a>
+      <a href="#topics">Lab Sheets</a>
+      <span class="nav-badge">2026</span>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-tag">Academic Year 2025 / 2026</div>
+    <h1>Python Programming<br/>Lecture Notes</h1>
+    <p>Lecture notes, lab exercises, and code examples for every lesson in the Python programming module.</p>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search lessons..." oninput="filterCards()" />
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">Lessons</div></div>
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Lab Sheets</div></div>
+      <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Code Examples</div></div>
+    </div>
+  </section>
+
+  <main class="container" id="topics" style="padding-top:3rem;">
+    <div class="section-title">All Lessons</div>
+    <div class="topics-grid" id="topicsGrid">
+
+      <a href="topic1.html" class="topic-card" data-keywords="introduction programming algorithm syntax semantics errors">
+        <div class="card-header"><span class="card-number">01</span></div>
+        <div class="card-title">Introduction to Computer Programming</div>
+        <div class="card-desc">What is programming, algorithms, programming languages, syntax vs semantics, types of errors.</div>
+        <div class="card-tags"><span class="tag">Algorithms</span><span class="tag">Syntax</span><span class="tag">Errors</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Theory</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic2.html" class="topic-card" data-keywords="python introduction syntax indentation comments variables">
+        <div class="card-header"><span class="card-number">02</span></div>
+        <div class="card-title">Python Introduction</div>
+        <div class="card-desc">What is Python, syntax, indentation, comments, variables, naming conventions, and output.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">Variables</span><span class="tag">Comments</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab Sheet 1</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic3.html" class="topic-card" data-keywords="data types string int float bool list tuple dict set">
+        <div class="card-header"><span class="card-number">03</span></div>
+        <div class="card-title">Python Data Types</div>
+        <div class="card-desc">Strings, integers, floats, booleans, lists, tuples, dictionaries, sets and the NoneType.</div>
+        <div class="card-tags"><span class="tag">str</span><span class="tag">int</span><span class="tag">list</span><span class="tag">dict</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab 02</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic4.html" class="topic-card" data-keywords="operators arithmetic assignment comparison logical bitwise">
+        <div class="card-header"><span class="card-number">04</span></div>
+        <div class="card-title">Python Operators</div>
+        <div class="card-desc">Arithmetic, assignment, comparison, logical, identity, membership, and bitwise operators.</div>
+        <div class="card-tags"><span class="tag">Arithmetic</span><span class="tag">Logical</span><span class="tag">Comparison</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab 03</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic5.html" class="topic-card" data-keywords="if statement elif else nested conditions shorthand">
+        <div class="card-header"><span class="card-number">05</span></div>
+        <div class="card-title">Python If Statement</div>
+        <div class="card-desc">Conditions, if/elif/else, nested if, short-hand if, logical operators and and/or/not.</div>
+        <div class="card-tags"><span class="tag">if</span><span class="tag">elif</span><span class="tag">else</span><span class="tag">Nested</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab 04 &amp; 05</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic6.html" class="topic-card" data-keywords="match statement case switch pattern python 3.10">
+        <div class="card-header"><span class="card-number">06</span></div>
+        <div class="card-title">Python Match Statement</div>
+        <div class="card-desc">Pattern matching with match-case (Python 3.10+), default case, combining values.</div>
+        <div class="card-tags"><span class="tag">match</span><span class="tag">case</span><span class="tag">Python 3.10</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab 06</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic7.html" class="topic-card" data-keywords="functions def arguments parameters return kwargs args">
+        <div class="card-header"><span class="card-number">07</span></div>
+        <div class="card-title">Functions</div>
+        <div class="card-desc">Creating and calling functions, arguments, return values, *args, **kwargs, default parameters.</div>
+        <div class="card-tags"><span class="tag">def</span><span class="tag">*args</span><span class="tag">**kwargs</span><span class="tag">return</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab 07</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic8.html" class="topic-card" data-keywords="loops while for break continue range nested pass">
+        <div class="card-header"><span class="card-number">08</span></div>
+        <div class="card-title">Python Loops</div>
+        <div class="card-desc">while loops, for loops, break, continue, else in loops, range(), nested loops and pass.</div>
+        <div class="card-tags"><span class="tag">while</span><span class="tag">for</span><span class="tag">range()</span><span class="tag">break</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-green"></span> Lab 08</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic9.html" class="topic-card" data-keywords="arrays python lists access modify delete">
+        <div class="card-header"><span class="card-number">09</span></div>
+        <div class="card-title">Python Arrays</div>
+        <div class="card-desc">Working with arrays and lists, accessing elements, modifying and deleting items.</div>
+        <div class="card-tags"><span class="tag">Arrays</span><span class="tag">Lists</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-blue"></span> Coming Soon</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic10.html" class="topic-card" data-keywords="oop object oriented programming class object inheritance">
+        <div class="card-header"><span class="card-number">10</span></div>
+        <div class="card-title">Python OOP</div>
+        <div class="card-desc">Object-Oriented Programming: classes, objects, inheritance, encapsulation, polymorphism.</div>
+        <div class="card-tags"><span class="tag">Classes</span><span class="tag">Objects</span><span class="tag">Inheritance</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-blue"></span> Coming Soon</span><span class="card-arrow">→</span></div>
+      </a>
+
+      <a href="topic11.html" class="topic-card" data-keywords="modules libraries import packages standard library">
+        <div class="card-header"><span class="card-number">11</span></div>
+        <div class="card-title">Python Modules</div>
+        <div class="card-desc">Using and importing Python modules and standard library packages.</div>
+        <div class="card-tags"><span class="tag">import</span><span class="tag">Modules</span></div>
+        <div class="card-footer"><span class="card-meta"><span class="dot dot-blue"></span> Coming Soon</span><span class="card-arrow">→</span></div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer><p>Python Programming Lecture Notes &mdash; N.H. Wanigasingha &nbsp;|&nbsp; Built for students</p></footer>
+  <script>
+    function filterCards() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('.topic-card').forEach(card => {
+        const text = (card.innerText + card.dataset.keywords).toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
